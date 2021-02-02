@@ -13,7 +13,7 @@ $Details = file_get_contents($post_get); // 若error_reporting已设置，则此
 //判断是否成功获取
 if (empty($Details)) {
     echo "<script>document.body.innerHTML = '<h1>抱歉,电波无法到达🤖</h1>';</script>"; //使用JavaScript进行刷新，清除body中的warning
-    //但是
+    //但是建议要exit防止继续
     exit;
 }
 $Details_json = json_decode($Details);
