@@ -1,5 +1,6 @@
 <?php
-$get_url = " '{$api}'/aggregate/top ";
+require('config.php');
+$get_url = "{$api}/aggregate/top ";
 $Details = file_get_contents($get_url);
 //判断是否成功获取
 if (empty($Details)) {
@@ -7,6 +8,7 @@ if (empty($Details)) {
     //但是建议要exit防止继续
     exit;
 }
+echo $Details;
 $Details_json = json_decode($Details); //解析json
 //JSON变量
 $ok = $Details_json->{'ok'}; //状态码
